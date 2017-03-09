@@ -1,0 +1,25 @@
+.logo-sm {
+  width: 150px;
+  height: auto;
+  margin: 15px 10px 15px 0;
+}
+
+.results-wrapper > .heading {
+  margin-bottom: 0;
+}
+
+.result-entry {
+  max-width: 100%;
+}
+.result-entry > .title > a:link {
+  color: #5d96e7;
+  text-decoration: none;
+}
+.result-entry > .title > a:hover {
+  text-decoration: underline;
+}
+
+.result-entry > .url {
+  color: #dca340;
+  word-wrap: break-word;
+}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} - Search{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+  <div class="logo-wrapper">
+    <a href="{{ url_for('search_page') }}">
+      <img class="img-responsive center-block" src="{{ url_for('static', filename='images/logo.png') }}" />
+    </a>
+  </div>
+  <form class="search-form form-inline" action="{{ url_for('search') }}" method="GET">
+    <input class="form-control search-box" type="text" name="query" autofocus />
+    <button class="btn btn-default search-btn" type="submit">UCIScout Search</button>
+  </form>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

@@ -1,0 +1,21 @@
+run elasticsearch.bat
+
+
+Server
+--------------
+source ~/bin/activate
+open cygwin in desktop
+cd /cygdrive/c/Users/Nova/Desktop/prj3/uci_scout
+pip install . (if first time)
+cd uci_scout
+python app.py
+
+
+Indexer
+--------------
+/cygdrive/c/Users/Nova/Desktop/prj3
+pip install -r requirements.txt (if first time)
+python indexer.py /cygdrive/c/Users/Nova/Downloads/WEBPAGES_RAW/
+		  /cygdrive/c/Users/Nova/Downloads/WEBPAGES_RAW/filtered_bookkeeping.tsv
+		  --no-load-progress
+		  --initialize-index (only first time) 

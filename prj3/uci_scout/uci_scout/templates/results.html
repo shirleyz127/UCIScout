@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} - Results{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/results.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div>
+    <form class="search-form form-inline" action="{{ url_for('search') }}" method="GET">
+      <div class="form-group">
+        <a href="{{ url_for('search_page') }}">
+          <img class="logo-sm" src="{{ url_for('static', filename='images/logo.png') }}" />
+        </a>
+        <input class="form-control search-box" type="text" name="query" value="{{ query }}" />
+        <button class="btn btn-default search-btn" type="submit">UCIScout Search</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="results-wrapper">
+    <h2 class="heading">Results</h2>
+    <span>{{ num_total_results }} results found</span>
+    <div class="results">
+      {% for result in results %}
+      <div class="result-entry">
+        <h3 class="title">
+          <a href="{{ result['url'] | ensure_scheme }}">{{ result['title'] | max_length(60) }}</a>
+        </h3>
+        <em class="url">{{ result['url'] | ensure_scheme | max_length(75) }}</em>
+        <p class="description">{{ result['description'] | max_length(150) }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    
+    {{ pagination.links }}
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

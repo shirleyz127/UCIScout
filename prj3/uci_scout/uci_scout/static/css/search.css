@@ -1,0 +1,19 @@
+.search-form {
+  font-family: arial, sans-serif;
+}
+
+.search-box {    
+  font-size: 16px;
+  margin: 15px 10px 15px 0;
+  min-width: 335px;
+}
+
+.search-btn {
+  height: 36px;
+  line-height: 27px;
+  background-color: #f2f2f2;
+  color: #757575;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 16px;
+}
